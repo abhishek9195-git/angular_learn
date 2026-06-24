@@ -2,11 +2,16 @@
 
 <form (submit)="onSubmit($event)">
   <label for="email">Email</label> <br>
-  <input type="text" id="email" [formField]="loginForm.email"> <br><br>
-
+  <input type="email" id="email" [formField]="loginForm.email"> <br><br>
+    @if(loginForm.email().touched() && !loginForm.email().valid()) {
+        <p>Invalid email</p>
+    }
   <label for="password">Password</label> <br>
   <input type="password" id="password" [formField]="loginForm.password"> <br><br>
 
+  @if (loginForm.password().touched() && !loginForm.password().valid()) {
+    <p>Invalid password format</p>
+  }
   <button type="submit">Login</button>
 </form>
 
