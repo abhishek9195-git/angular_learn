@@ -1,1 +1,14 @@
+<h1>Login form</h1>
+
+<form (submit)="onSubmit($event)">
+  <label for="email">Email</label> <br>
+  <input type="text" id="email" [formField]="loginForm.email"> <br><br>
+
+  <label for="password">Password</label> <br>
+  <input type="password" id="password" [formField]="loginForm.password"> <br><br>
+
+  <button type="submit">Login</button>
+</form>
+
+
 <router-outlet />
